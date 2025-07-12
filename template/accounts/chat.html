@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with GPT</title>
+</head>
+<body>
+    <h2>Chat with GPT</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="message">Enter your question:</label><br>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if gpt_response %}
+        <h3>GPT Response:</h3>
+        <p>{{ gpt_response }}</p>
+    {% endif %}
+</body>
+</html>

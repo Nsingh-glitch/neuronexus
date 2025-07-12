@@ -1,0 +1,265 @@
+/* 🔹 Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #121212; /* Dark background */
+    color: #fff;
+}
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #121212; /* Track background color */
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00c8ff; /* Scrollbar handle color */
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0096cc; /* Darker color on hover */
+}
+.home button{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-top: 13px;
+    background-color: rgba(255, 255, 255, 0.11);
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    bottom: 5px;
+    left: 80px;
+}
+.home i{
+    font-size: large;
+    color: white;
+}
+.home button:hover{
+    font-size: 30px;
+}
+
+/* 🔹 Sidebar (Profile & Navigation) */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    transition: 0.3s ease-in-out;
+}
+.sidebar:hover {
+    background-color: black;
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.profile-section img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #4caf50;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+.profile-section img:hover {
+    transform: scale(1.1);
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-section p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.profile-section button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.profile-section button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* 🔹 Navigation Links */
+.nav-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    background: #292929;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #4caf50;
+    transform: translateX(5px);
+}
+
+/* 🔹 Main Dashboard */
+.dashboard {
+    margin-left: 300px;
+    flex: 1;
+    padding: 30px;
+}
+
+/* 🔹 Welcome Section */
+.welcome {
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.welcome:hover {
+    transform: scale(1.02);
+}
+
+.welcome h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.welcome p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* 🔹 Performance Analytics */
+.performance {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.performance h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 100%;
+    max-height: 300px;
+}
+
+/* 🔹 AI-Driven Recommendations */
+.recommendations {
+    background: #292929;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.recommendations h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.recommendations ul {
+    list-style: none;
+}
+
+.recommendations li {
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* 🔹 Quick Actions */
+.quick-actions {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.quick-actions h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quick-actions button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 8px 0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.quick-actions button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* 🔹 Responsive Design */
+@media screen and (max-width: 900px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .dashboard {
+        margin-left: 240px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .dashboard {
+        margin-left: 0;
+        padding: 15px;
+    }
+}

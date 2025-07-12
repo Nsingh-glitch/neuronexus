@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <a href="{% url 'index' %}" class="home-button"><i class="fa-solid fa-house"></i>Home</a>
+    <div class="profile-container">
+        <div class="profile-card">
+            <!-- {% if user.profile.profile_image %} -->
+            <img src="{{ user.profile.profile_image.url }}" class="profile-pic" alt="Profile Picture">
+            <!-- {% else %} -->
+            <!-- <img src="{% static 'images/default-profile.jpg' %}" class="profile-pic" alt="Default Profile Picture"> -->
+            <!-- {% endif %} -->
+        
+
+
+
+            <h2 id="student-name">{{ user.username|default:user.email }}</h2>  <!-- Dynamic Name -->
+            <!-- <p>Email: <span id="email">{{ user.email }}</span></p> -->
+            <p>Email: <span id="email">Rajaryan@student.com</span></p>
+
+            <p>Progress: 99%</p>
+            <button onclick="window.location.href='{% url 'edit_profile' %}'">✏️ Edit Profile</button>
+        </div>
+        <div class="achievements">
+            <h3>Achievements</h3>
+            <div class="badges">
+                <span class="badge gold">🏆 Top Performer</span>
+                <span class="badge silver">📚 Quiz Master</span>
+                <span class="badge bronze">🔥 Consistency Streak</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

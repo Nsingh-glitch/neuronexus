@@ -1,0 +1,50 @@
+{% load static %}  <!-- Load static files for Django -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Adaptive Learning</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <a href="{% url 'index' %}" class="home-button">
+        <i class="fa-solid fa-house"></i> Home
+    </a>
+    
+    <div class="container">
+        <div class="form-box">
+            <h2>Edit Profile</h2>
+
+            <form id="edit-profile-form" method="POST" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
+                {% csrf_token %}
+                {% include "accounts/base/alert.html" %}
+                
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Full Name" value="{{ user.username }}" required>
+                </div>
+            
+                <div class="input-group">
+                    <input type="text" id="grade" name="grade" placeholder="Grade (e.g., 10th, 12th)" value="{{ user.grade }}">
+                </div>
+            
+                <div class="input-group">
+                    <label for="profile_image">Profile Picture:</label>
+                    <input type="file" id="profile_image" name="profile_image">
+                </div>
+            
+                {% if error %}
+                    <p class="error-message">{{ error }}</p>
+                {% endif %}
+            
+                <button type="submit" id="submit-btn">Save Changes</button>
+            </form>
+
+            <br>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static %}  <!-- Load Django static files -->
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Dashboard | AI Learning</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script defer src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for Graphs -->
+</head>
+<body>
+
+    <!-- 🔹 Navbar -->
+    <nav class="navbar">
+        <div class="logo">Neural Learn</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'quiz' %}">Take a Quiz</a></li>
+            <li><a href="{% url 'materials' %}">Study Materials</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔹 Performance Summary -->
+    <section class="performance-container">
+        <h1>📊 Quiz Performance</h1>
+        <div class="score-box">
+            <h2>Your Score: <span id="score-text"></span> / <span id="total-questions"></span></h2>
+            <p id="performance-message">Analyzing...</p>
+        </div>
+
+        <!-- 🔹 Performance Chart -->
+        <div class="chart-container">
+            <canvas id="progressChart"></canvas>
+        </div>
+
+        <!-- 🔹 Weak Areas & Study Suggestions -->
+        <div class="weak-areas">
+            <h2>📌 Areas to Improve</h2>
+            <ul id="weak-topics">
+                <li>Loading insights...</li>
+            </ul>
+        </div>
+
+        <!-- 🔹 Achievements & Badges -->
+        <div class="achievements">
+            <h2>🏆 Achievements</h2>
+            <div class="badge-container" id="badge-container">
+                <!-- Badges will be added dynamically -->
+            </div>
+        </div>
+
+        <button onclick="window.location.href='{% url 'quiz' %}'">Retry Quiz</button>
+    </section>
+
+</body>
+</html>

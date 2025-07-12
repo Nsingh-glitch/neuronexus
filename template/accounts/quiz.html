@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Adaptive Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="{% static 'js/scripts.js' %}"></script>
+
+</head>
+<body>
+    <a href="{% url 'index' %}" class="home-button"><i class="fa-solid fa-house"></i>Home</a>
+
+    <!-- Progress Header (Added) -->
+    <div id="progress-header" class="hidden">
+        Questions Attempted: <span id="attempted-count">0</span>
+        Remaining: <span id="remaining-count">0</span>
+    </div>
+
+
+    <!-- Class Selection -->
+    <section id="class-selection">
+        <h2>Select Your Class</h2>
+        <button onclick="setClass(10)">Class 10</button>
+        <button onclick="setClass(11)">Class 11</button>
+        <button onclick="setClass(12)">Class 12</button>
+    </section>
+
+    <!-- Difficulty Selection (Hidden Initially) -->
+    <section id="difficulty-selection" style="display:none;">
+        <h2>Select Difficulty Level</h2>
+        <button onclick="setDifficulty('Easy')">Easy</button>
+        <button onclick="setDifficulty('Medium')">Medium</button>
+        <button onclick="setDifficulty('Hard')">Hard</button>
+    </section>
+
+    <!-- Quiz Section (Hidden Initially) -->
+    <section id="quiz-container" style="display:none;">
+        <h1>📚 AI Adaptive Quiz</h1>
+        <div class="quiz-box">
+            <p id="quiz-question">Loading question...</p>
+            <div class="options-container">
+                <button class="option-btn" id="option1" onclick="checkAnswer(0)"></button>
+                <button class="option-btn" id="option2" onclick="checkAnswer(1)"></button>
+                <button class="option-btn" id="option3" onclick="checkAnswer(2)"></button>
+                <button class="option-btn" id="option4" onclick="checkAnswer(3)"></button>
+            </div>
+        </div>
+
+        <!-- Feedback -->
+        <p id="feedback-text"></p>
+
+        <!-- Timer -->
+        <div class="timer">
+            ⏳ Time Left: <span id="timer">30</span> sec
+        </div>
+    </section>
+
+
+
+    <!-- Review Page (Added) -->
+    <section id="review-page" class="hidden">
+        <h2>📝 Review Your Answers</h2>
+        <div id="answers-review"></div>
+        <div class="review-buttons">
+            <button onclick="returnToQuiz()">Edit Answers</button>
+            <button onclick="submitQuiz()">Final Submit</button>
+        </div>
+    </section>
+
+    <!-- Progress Page (Added) -->
+    <section id="progress-page" class="hidden">
+        <!-- <h2>📤 Quiz Submitted!</h2>
+        <div class="progress-loader"></div>
+        <p>Your results are being analyzed...</p> -->
+
+        Questions Attempted: <span id="attempted-count">0</span>
+        Remaining: <span id="remaining-count">0</span>
+        <br>
+        <span id="question-number"></span>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Learning | Learn Smarter with AI</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="{% static 'images/logobrand.jpg' %}">
+    <script defer src="{% static 'js/home.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logobrand">
+            <img src="{% static 'images/logonew.png' %}" alt="adaptive learning" class="img-logo">   
+        </div>
+        <div class="logo">Adaptive Learning</div>
+        
+        <!-- Hamburger Menu Button -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+        <ul class="nav-links">
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'quiz' %}">Quiz</a></li>
+            <li><a href="{% url 'history' %}">PastQuiz</a></li>
+            <li><a href="{% url 'materials' %}">Study Materials</a></li>
+            <li><a href="{% url 'tutor' %}">AI Tutor</a></li>
+        </ul>
+        <div class="auth-links">
+            <a href="{% url 'signup' %}" class="signup-btn">Signup</a>
+            <a href="{% url 'login' %}" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+<div class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Learn Smarter with AI</h1>
+            <h3>Personalized learning for every student, powered by AI.</h3>
+            <br>
+            <a href="{% url 'login' %}" class="cta-btn">Start Learning Now</a>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <img src="{% static 'images/feature1.jpg' %}" alt="AI Study Paths">
+                <h3>Personalized Learning</h3>
+                <p>AI-driven study material suggestions tailored for you.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{% static 'images/feature2.jpg' %}" alt="AI Virtual Tutor">
+                <h3>AI Virtual Tutor</h3>
+                <p>Get real-time doubt solving and feedback.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{% static 'images/feature3.jpg' %}" alt="Adaptive Quizzes">
+                <h3>Adaptive Quizzes</h3>
+                <p>Smart assessments that adjust difficulty based on performance.</p>
+            </div>
+            <div class="feature-card">
+                <img src="{% static 'images/feature4.jpg' %}" alt="Remote Learning">
+                <h3>Bridging the Gap</h3>
+                <p>AI voice assistant for enhanced remote learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Students & Teachers Say</h2>
+        <br>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="{% static 'images/studentnew.png' %}" alt="Student 1">
+                <p>"This platform changed the way I study! AI makes it so much easier!"</p>
+                <span>- Vivek jha, Student</span>
+            </div>
+            <div class="testimonial2">
+                <img src="{% static 'images/teachernew.png' %}" alt="Student 2">
+                <p>"As a teacher, I love how adaptive quizzes help assess students effectively."</p>
+                <span>- Raj Singh K., Teacher</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Join Us Today!</h2>
+        <h4>Start your personalized AI-driven learning journey now.</h4>
+        <br>
+        <a href="{% url 'login' %}" class="cta-btn">Get Started</a>
+    </section>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Adaptive Learning | <a href="#">Contact Us
